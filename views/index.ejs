@@ -17,11 +17,16 @@
 </div>
 <div class="tasks p-10 flex gap-3 flex-wrap w-full ">
 <% if(files.length >0){%>
-    <% files.forEach(function(val){%>
+    <% files.forEach(function(val){%> 
   <div class="task  w-72 px-3 py-4 bg-zinc-800 rounded-md ">
     <h1 class="text-white text-3xl tracking-tighter"> <%= val %> </h1>
-    <a href="" class="text-blue-500 inline-block mt-3">Read More.</a>   
+    <div class="flex justify-between items-center w-full mt-3">
+        <a href="/files/<%= val%>" class="text-blue-500 inline-block ">Read More.</a> 
+        <a href="/edit/<%= val%>" class="text-zinc-700">edit</a>  
     </div>
+    </div>
+
+
    <% }) %>
     <% } else {%>
         <h1 class="text-zinc-800 text-9xl text-center w-full mt-1">No Task Yet</h1>    
